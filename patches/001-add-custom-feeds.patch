@@ -1,5 +1,6 @@
 diff --git a/feeds.conf.default b/feeds.conf.default
 --- a/feeds.conf.default
 +++ b/feeds.conf.default
+@@ -0,0 +1,2 @@
 +# Add fan packages
 +src-git alpinefancontrol https://github.com/devrus91/openwrt-alpine-fan-control.git
