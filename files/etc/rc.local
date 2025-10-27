@@ -1,7 +1,7 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
-
-awk '$5 >= 3071' /etc/ssh/moduli > /etc/ssh/moduli.safe
-mv /etc/ssh/moduli.safe /etc/ssh/moduli
-
+echo emc2301 0x2f >  /sys/bus/i2c/devices/i2c-0/new_device
+i2cset -f -y 0 0x2f 0x38 0x18 
+i2cset -f -y 0 0x2f 0x2b 0x01
+echo 60 > /sys/class/hwmon/hwmon4/pwm1
 exit 0
