@@ -7,7 +7,6 @@ This project automates the process of building OpenWrt firmware images for the Q
 - Automated build process triggered by new commits in the [remote repository](https://github.com/qosmio/openwrt-ipq) or manual workflow dispatch
 - Compiler optimizations for improved performance
 - Hardening build options for enhanced security
-- SSH configuration with strong algorithms and key exchange methods. Refer to the [`ssh_hardening.config`](files/etc/ssh/sshd_config.d/ssh_hardening.conf)
 - Additional useful packages. Refer to the [`ax3600.config`](ax3600.config)
 - Full NSS (Network Subsystem) support 
 - Quality-of-life enhancements through UCI configuration

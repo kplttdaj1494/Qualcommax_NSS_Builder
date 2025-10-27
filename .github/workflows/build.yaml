@@ -183,7 +183,7 @@ jobs:
           set -euo pipefail
           ccache -s || true
 
-      - name: Apply custom patches
+      - name: Apply custom patches 
         run: |
           set -euo pipefail
 
