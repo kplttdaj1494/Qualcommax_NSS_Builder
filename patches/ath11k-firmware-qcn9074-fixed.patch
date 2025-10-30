@@ -1,6 +1,8 @@
+diff --git a/package/firmware/ath11k-firmware/Makefile b/package/firmware/ath11k-firmware/Makefile
+index cfc364215f..3b205d6ab1 100644
 --- a/package/firmware/ath11k-firmware/Makefile
 +++ b/package/firmware/ath11k-firmware/Makefile
-@@ -118,10 +118,12 @@ endef
+@@ -122,11 +122,14 @@ endef
  
  define Package/ath11k-firmware-qcn9074/install
  	$(INSTALL_DIR) $(1)/lib/firmware/ath11k/QCN9074/hw1.0
@@ -15,3 +17,5 @@
 +		$(PKG_BUILD_DIR)/QCN9074/hw1.0/board-2.bin \
 +		$(1)/lib/firmware/ath11k/QCN9074/hw1.0/board-2.bin
  endef
+ 
+ $(eval $(call BuildPackage,ath11k-firmware-ipq5018))
