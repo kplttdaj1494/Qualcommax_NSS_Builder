@@ -17,7 +17,6 @@ set pbuf.opt.memory_profile=auto
 set firewall.@defaults[0].flow_offloading=0
 set ecm.@general[0].enable_bridge_filtering=0
 set system.@system[0].cronloglevel='7'
-commit
 EOI
 
 # Disable services
@@ -25,3 +24,14 @@ EOI
 /etc/init.d/mwan3 disable
 /etc/init.d/sqm stop
 /etc/init.d/sqm disable
+
+# Apply custom board-2.bin and clean calibration files
+if [ -f /etc/uci-defaults/board-2.bin ]; then
+    echo "Applying custom board-2.bin..."
+    cp /etc/uci-defaults/board-2.bin /lib/firmware/ath11k/QCN9074/hw1.0/board-2.bin
+    rm -f /etc/uci-defaults/board-2.bin
+    
+    # Remove old calibration files to force regeneration
+    rm -f /lib/firmware/ath11k/QCN9074/hw1.0/cal-pci-*
+    reboot
+fi
