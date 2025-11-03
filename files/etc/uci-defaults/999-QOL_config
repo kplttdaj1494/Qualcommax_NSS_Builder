@@ -31,14 +31,3 @@ if [ -f /etc/apk/repositories.d/distfeeds.list ]; then
     sed -i '/alpinefancontrol/d' /etc/apk/repositories.d/distfeeds.list
     sed -i '/ipobfs/d' /etc/apk/repositories.d/distfeeds.list
 fi
-
-# Apply custom board-2.bin and clean calibration files
-if [ -f /etc/uci-defaults/board-2.bin ]; then
-    echo "Applying custom board-2.bin..."
-    cp /etc/uci-defaults/board-2.bin /lib/firmware/ath11k/QCN9074/hw1.0/board-2.bin
-    rm -f /etc/uci-defaults/board-2.bin
-    
-    # Remove old calibration files to force regeneration
-    rm -f /lib/firmware/ath11k/QCN9074/hw1.0/cal-pci-*
-    reboot
-fi
