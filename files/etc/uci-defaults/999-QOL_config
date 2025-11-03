@@ -25,6 +25,13 @@ EOI
 /etc/init.d/sqm stop
 /etc/init.d/sqm disable
 
+# Remove unwanted repository entries
+if [ -f /etc/apk/repositories.d/distfeeds.list ]; then
+    echo "Cleaning distfeeds.list..."
+    sed -i '/alpinefancontrol/d' /etc/apk/repositories.d/distfeeds.list
+    sed -i '/ipobfs/d' /etc/apk/repositories.d/distfeeds.list
+fi
+
 # Apply custom board-2.bin and clean calibration files
 if [ -f /etc/uci-defaults/board-2.bin ]; then
     echo "Applying custom board-2.bin..."
