@@ -1,29 +1,11 @@
-uci -q batch << EOI
-set wireless.radio0.country='US'
-set wireless.radio1.country='US'
-set wireless.radio2.country='US'
-set wireless.radio0.disabled=1
-set wireless.radio1.disabled=1
-set wireless.radio2.disabled=0
-set wireless.radio2.ssid='OpenWrt24'
-set wireless.radio2.encryption='psk2'
-set wireless.radio2.network='lan'
-set wireless.radio2.mode='ap'
-set wireless.radio2.key='password'
-set wireless.radio2.channel='auto'
-set wireless.radio2.htmode='HE20'
-
-set pbuf.opt.memory_profile=auto
-set firewall.@defaults[0].flow_offloading=0
-set ecm.@general[0].enable_bridge_filtering=0
-set system.@system[0].cronloglevel='7'
-EOI
 
 # Disable services
 /etc/init.d/mwan3 stop
 /etc/init.d/mwan3 disable
 /etc/init.d/sqm stop
 /etc/init.d/sqm disable
+/etc/init.d/ddns stop
+/etc/init.d/ddns disable
 
 # Remove unwanted repository entries
 if [ -f /etc/apk/repositories.d/distfeeds.list ]; then
