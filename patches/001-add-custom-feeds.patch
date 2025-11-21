@@ -2,4 +2,4 @@
 +++ b/feeds.conf.default
 @@ -6,0 +6,2 @@ src-git sqm_scripts_nss https://github.com/qosmio/sqm-scripts-nss.git
 +src-git alpinefancontrol https://github.com/kplttdaj1494/openwrt-alpine-fan-control.git
-+src-git ipobfs https://github.com/kplttdaj1494/ipobfs.git
++src-git qosmio https://github.com/qosmio/packages-extra
